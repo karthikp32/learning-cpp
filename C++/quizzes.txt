@@ -1,0 +1,296 @@
+Ch.2 Quiz Yourself:
+
+1) What is the correct value to return to the operating system upon the successful completion
+of a program?
+My answer: 0
+Actual answer: 0
+
+2)  What is the only function all C++ programs must contain?
+My answer: main()
+Actual answer: main()
+
+3)  What punctuation is used to signal the
+beginning and end of code blocks?
+My answer: A. { }
+Actual answer: A. { }
+
+4) What punctuation
+ends most lines of C++ code?
+My answer: B. ;
+Actual answer: B. ;
+
+5) Which of the
+following is a correct comment?
+My answer: C. /* Comment */
+Actual answer: C. /* Comment */
+
+6)What header file do you need
+to use to get access to cout?
+My answer: D. using namespace std;
+Actual answer: C. iostream
+
+Ch.2 Practice Problems
+
+1. Write a program
+that prints out your name.
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+    std::cout << "Hello, I'm Karthik. Welcome to my first c++ program! " << std::ends;
+}
+
+
+2. Write a program that displays multiple
+lines of text onto the screen, each one
+displaying the name of one of your friends.
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+    std::cout << "Austin\n" << std::ends;
+    std::cout << "Nate\n" << std::ends;
+    std::cout << "Fei\n" << std::ends;
+}
+
+3. Try commenting out each line of code in the first program we created together and see whether the program can compile without it. Look at the errors you  get—do they make any sense? Can you see why they happened
+ because of the line of code you changed?
+
+ When I deleted '#include <iostream>', I got two errors. The first error said "'cout' is not a member of std".
+ The second error "said 'ends' is not a member of 'std'". The compiler doesn't know where to find std::cout and std:ends
+ without including iostream library, which is the input/output library. Deleting "using namespace std;" didn't cause an error.
+ Deleting "int main()" caused an error that said "expected unqualified-id before ‘{’ token". That happened because it was expecting
+ a function name before the '{' token. When I deleted the '{' token, I got an error that expected "expected initializer before 'std'".
+ Deleting "std::cout << "Hello, I'm Karthik. Welcome to my first c++ program! " << std::ends;" didn't cause an error.
+ Deleting "}" gave me an error that said "expected '}' at end of input". This happened as every function requires a "}" at the end of
+ the function.
+
+
+Ch.3 Quiz Yourself:
+1. What variable type should you use if you want to store a number like 3.1415?
+My answer: C. double
+Actual answer: C. double
+
+2. Which of the following is the correct operator to compare two variables?
+My answer: D. ==
+Actual answer:  D. ==
+
+
+3. How do you get access to the string data type?
+My answer: C. You include the string header file
+Actual answer: C. You include the string header file
+
+
+4. Which of the following is not a correct variable type?
+My answer: B. real
+Actual answer:  B. real
+
+
+5. How can you read in an entire line from the user?
+My answer: A. use cin>>
+Actual answer: C. use getline
+
+
+6. What would be displayed on the screen for this expression in C++: cout << 1234/2000?
+My answer: A. 0
+Actual answer: A. 0
+
+
+7. Why does C++ need a char type if there are already integers?
+My answer: C. To make it easy to read in, and print out, actual characters rather than numbers, even though chars are stored as numbers
+Actual answer: C. To make it easy to read in, and print out, actual characters rather than numbers, even though chars are stored as numbers
+
+
+
+
+Ch.3 Practice Problems
+1. Write a program that outputs your name.
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  cout<<"Karthik Pillalamarri\n";
+}
+
+2. Write a program that reads in two numbers and adds them together.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+int first_operand;
+int second_operand;
+cout << "Enter first argument: ";
+cin >> first_operand;
+cout << "Enter second argument: ";
+cin >> second_operand;
+int answer = first_operand + second_operand;
+
+}
+
+3. Write a program that performs division of two numbers read from the user and prints out an exact result.  Make sure to test your program with both integer inputs and decimal inputs.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+double first_operand;
+double second_operand;
+cout << "Enter first argument: ";
+cin >> first_operand;
+cout << "Enter second argument: ";
+cin >> second_operand;
+cout << first_operand  << " / " << second_operand << " = " << first_operand/second_operand << endl;
+
+
+}
+
+Ch.4 Quiz Yourself:
+1. Which of the following is true?
+My answer: E. All of the above
+Actual answer: E. All of the above
+
+2. Which of the following is the Boolean operator for Boolean and?
+My answer: B. &&
+Actual answer: B. &&
+
+3. What does the expression !( true && ! ( false || true ) ) evaluate to?
+My answer: A. true
+Actual answer: A. true
+
+4. Which of the following shows the correct syntax for an if statement?
+My answer: C. if ( expression )
+Actual answer: C. if ( expression )
+
+
+Ch.4 Practice Problems
+1. Ask the user for two users' ages, and indicate who is older; behave differently if both are over 100.
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int firstUserAge;
+  int secondUserAge;
+  cout <<"Please enter the first user's age: ";
+  cin >> firstUserAge;
+  cout <<"Please enter the second user's age: ";
+  cin >> secondUserAge;
+
+  if(firstUserAge > 100 && secondUserAge > 100){
+    cout << "Wow, you both have crossed the century mark!";
+  }
+  else if(firstUserAge>secondUserAge){
+    cout << "First user, you are older!";
+  }
+  else if(secondUserAge>firstUserAge){
+    cout << "Second user, you are older!";
+  }
+  else{
+    cout << "You are both the same age!";
+  }
+
+
+}
+
+2. Implement a simple "password" system that takes a password in the form of a number.  Make it so that either of two numbers is valid, but use only one if statement to do the check.
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int password;
+
+  cout<< "Please enter your password: ";
+  cin >> password;
+
+  if(password == 23 || password == 32){
+    cout << "That is the correct password.";
+  }
+  else{
+    cout << "That is not the correct password.";
+  }
+
+}
+
+3. Write a small calculator that takes as input one of the four arithmetic operations, the two arguments to those operations, and then prints out the result.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+  int first_operand;
+  int second_operand;
+  string operatorInput;
+
+  cout << "Enter the first operand: ";
+  cin >> first_operand;
+  cout << "Enter the second_operand: ";
+  cin >> second_operand;
+  cout << "Enter the operator: ";
+  cin >> operatorInput;
+
+  if(operatorInput == "+"){
+    cout << "Your answer is " << first_operand + second_operand<<endl;
+  }
+  else if(operatorInput == "-"){
+    cout << "Your answer is " << first_operand - second_operand<<endl;
+  }
+  else if(operatorInput == "*"){
+    cout << "Your answer is " << first_operand * second_operand<<endl;
+  }
+  else if(operatorInput == "/"){
+    cout << "Your answer is " << first_operand / second_operand<<endl;
+  }
+  else{
+    cout << "You have entered an incorrect operator.";
+  }
+
+
+}
+
+4. Expand the password checking program from earlier in this chapter and make it take multiple usernames, each with their own password, and ensure that the right username is used for the
+right password. Provide the ability to prompt users again if the first login attempt failed. Think about how easy (or hard) it is to do this for a lot of usernames and passwords.
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int password;
+  bool anotherUsername;
+  string username;
+
+  while(anotherUsername == true){
+    cout << "Enter the username: ";
+    cin >> username;
+    cout << "Enter the password: ";
+    cin >> password;
+    if(username == "karthikp32" && password == 23){
+      cout << "You entered a correct username and password!"<<endl;
+      anotherUsername = false;
+    }
+    else if(username == "swathip32" && password == 23){
+      cout << "You entered a correct username and password!"<<endl;
+      anotherUsername = false;
+    }
+    else{
+      anotherUsername = true;
+    }
+  }
+}
+
+
+5. A dynamic map or hashtable would make it easier to add usernames and passwords.
