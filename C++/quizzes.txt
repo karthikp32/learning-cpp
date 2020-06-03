@@ -294,3 +294,40 @@ int main(){
 
 
 5. A dynamic map or hashtable would make it easier to add usernames and passwords.
+
+
+Ch.5 Quiz Yourself:
+1. What is the final value of x when the code int x; for(x=0; x<10; x++) {} is run?
+My answer: A. 10
+Actual answer: A. 10
+
+2. When does the code block following while(x<100) execute?
+My answer: A. When x is less than one hundred
+Actual answer: A. When x is less than one hundred
+
+3. Which is not a loop structure?
+My answer: D. repeat until
+Actual answer: D. repeat until
+
+4. How many times is a do-while loop guaranteed to loop?
+My answer: C. 1
+Actual answer: C. 1
+
+
+Ch.5 Practice Problems:
+
+1. Write a program that prints out the entire lyrics to a full rendition of "99 Bottles of Beer"
+My answer: #include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+  for(int i=0;i<100;i++){
+    cout << i << " bottles of beer on the wall!\n";
+  }
+
+}
+
+2. Write a menu program that lets the user select from a list of options, and if the input is not one of the options, reprint the list 
